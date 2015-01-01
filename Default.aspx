@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-<%@ Register Src="~/myImgTxt_Teacher.ascx" TagName="myImgText_Teacher" TagPrefix="uc1" %>
+<%@ Register Src="~/Control/myImgTxt_Teacher.ascx" TagName="myImgText_Teacher" TagPrefix="uc1" %>
+<%@ Register Src="~/Control/TitleContent.ascx" TagName="TitleContent" TagPrefix="uc2" %>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" class="MainTable">
@@ -32,8 +33,8 @@
             <h3 class="R"></h3></td>
         </tr>
         <tr> 
-          <td class="middle" align="left">&nbsp;&nbsp;  课程的目标是培养优秀职业记者，教会未来的记者如何准确地报道新闻、精确、有力地写作新闻。在课堂上讲述新闻写作理论、分析国内外新近新闻作品的同时，还带领学生走出课堂，深入社会，把生活在学校里边的一种学生的视觉，转变为一种记者的视觉去看问题，培养实践能力、创新能力强，有高度社会责任感的新闻从业人才。
-
+          <td class="middle" align="left">
+              <asp:Label ID="labAim" runat="server" Text="Label"></asp:Label>
  </td>
         </tr>
         <tr><td class="foot"><h3 class="L"></h3><h3 class="R"></h3></td></tr>
@@ -54,9 +55,10 @@
           <td class="middle">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tbody><tr> 
-                <td width="34%"><a href="http://xcy.hubu.edu.cn/jpkc/xz/5/0/74/1.htm" target="_blank"><img src="style/1_20080411030424_bHN3.jpg" width="180" height="220" border="0"></a></td>
+                <td width="34%"><a href="http://xcy.hubu.edu.cn/jpkc/xz/5/0/74/1.htm" target="_blank"><%--<img src="style/1_20080411030424_bHN3.jpg" width="180" height="220" border="0">--%><asp:Image
+                        ID="imgPrincipal" width="180" height="220" border="0" runat="server" /></a></td>
                 <td width="66%">
-                    <asp:Label ID="txtPrincipal" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="labPrincipal" runat="server" Text="Label"></asp:Label>
                     <p align="right"><strong>
                         <a href="list.aspx?CatNameID=2">...更多</a></strong></p>
                 <%--<uc1:myimgtext_Teacher ID="MyTeacher" showMsg="2" mySum="5" showLen="22" 
@@ -88,10 +90,10 @@
             <h3 class="R"></h3></td>
         </tr>
         <tr> 
-          <td class="middle" align="left"><p><strong>武汉大学新闻与传播学院院长罗以澄：</strong>新闻写作教师团队提高了学生新闻写作兴趣，学生走上工作岗位后获得工作单位一致认可。</p>
+          <td class="middle" align="left"><uc2:TitleContent ID="Professor" showMsg="12" mySum="2" showLen="22"  runat="server" /><%--<p><strong>武汉大学新闻与传播学院院长罗以澄：</strong>新闻写作教师团队提高了学生新闻写作兴趣，学生走上工作岗位后获得工作单位一致认可。</p>
 <p>&nbsp;</p>
 <p><strong>湖北大学视导员谌宗恕：</strong>新闻专业学生写作能力强这一优势的形成，我们新闻写作课教师团队功不可没。</p><strong>
-<p align="right"><strong><a href="http://xcy.hubu.edu.cn/jpkc/xz/2/">…更多</a></strong></p></strong> </td>
+<p align="right"><strong><a href="http://xcy.hubu.edu.cn/jpkc/xz/2/">…更多</a></strong></p></strong> --%></td>
         </tr>
         <tr><td class="foot"><h3 class="L"></h3><h3 class="R"></h3></td></tr>
       </tbody></table></td>
@@ -109,10 +111,7 @@
             <h3 class="R"></h3></td>
         </tr>
         <tr> 
-          <td class="middle" align="left"><p><strong>09年学生评价：</strong>廖老师的教学方法新颖独特，多媒体授课扩大了学生视野，读报、评报的方式提高了学生的新闻敏感与审美能力。</p>
-<p><strong></strong>&nbsp;</p>
-<p><strong>08年学生评价：</strong>黄老师善于以幽默的授课语言调动课堂气氛，教学讲求民主，学生只要有自己的意见都可以自由发表。</p><strong>
-<p align="right"><strong><a href="http://xcy.hubu.edu.cn/jpkc/xz/3/">…更多</a></strong></p></strong> </td>
+          <td class="middle" align="left"><uc2:TitleContent ID="Student" showMsg="13" mySum="2" showLen="22"  runat="server" /></td>
         </tr>
         <tr><td class="foot"><h3 class="L"></h3><h3 class="R"></h3></td></tr>
       </tbody></table></td>

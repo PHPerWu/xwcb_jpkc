@@ -5,7 +5,7 @@
 <ASP:Repeater ID="myRepeater" runat="server" DataSourceID="objCourseList">
 <Itemtemplate>
 <p>&middot;&nbsp;
-    <a  target="_blank"><%#Eval("CTITLE")%></a></p>
+    <a  href="view.aspx?CID=<%#Eval("CID")%>"target="_blank"><%#Eval("CTITLE")%></a></p>
 </Itemtemplate>
 </asp:Repeater>
 <asp:ObjectDataSource ID="objCourseList" runat="server" DeleteMethod="Delete" 

@@ -1,13 +1,14 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="副本 myImgTxt_Teacher.ascx.cs" Inherits="myImgTxt" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="TitleContent.ascx.cs" Inherits="myImgTxt" %>
 
 
 <div id="content_09_02">
 <ASP:Repeater ID="myRepeater" runat="server" DataSourceID="objCourseList">
 <Itemtemplate>
-<p>&middot;&nbsp;
-    <a  target="_blank"><%#Eval("CTITLE")%></a></p>
+<p>
+    <a  href="view.aspx?CID=<%#Eval("CID")%>"target="_blank"><strong><%#Eval("CTITLE")%>：</strong><%#Eval("CCONTENT")%></a></p>
 </Itemtemplate>
 </asp:Repeater>
+<p align="right"><strong><a href="~/list.aspx?CatNameID=<%#Eval("CID")%>">…更多</a></strong></p>
 <asp:ObjectDataSource ID="objCourseList" runat="server" DeleteMethod="Delete" 
         InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
         SelectMethod="GetDataByCatNameID" 
