@@ -1,0 +1,22 @@
+#listsp{
+	width:99%;
+}
+#listsp .sptd{
+	border-bottom:1px dotted #ccc;
+	padding-top:5px;
+}
+#listsp .pic{
+	padding:3px 1em 0.5em 5px;
+}
+#listsp .title{
+	padding-bottom:0.2em;
+}
+#listsp .title a{
+	color:#990000;
+}
+#listsp .pic img{
+	border:1px solid #333;
+}
+#spshow .about{
+	color:#990000;
+}
