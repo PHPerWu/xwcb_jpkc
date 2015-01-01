@@ -11,7 +11,8 @@
 <asp:ObjectDataSource ID="objCourseList" runat="server" DeleteMethod="Delete" 
         InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
         SelectMethod="GetDataByCatNameID" 
-        TypeName="NewsTableAdapters.CONTENTDBTableAdapter" UpdateMethod="Update">
+        TypeName="NewsTableAdapters.CONTENTDBTableAdapter" UpdateMethod="Update" 
+        onselecting="objCourseList_Selecting">
     <DeleteParameters>
         <asp:Parameter Name="Original_CID" Type="String" />
     </DeleteParameters>
@@ -33,8 +34,7 @@
         <asp:Parameter Name="备用5" Type="String" />
     </InsertParameters>
     <SelectParameters>
-        <asp:SessionParameter DefaultValue="2" Name="CatNameID" SessionField="ShowMsg" 
-            Type="Decimal" />
+        <asp:Parameter DefaultValue="" Name="CatNameID" Type="Decimal" />
         <asp:SessionParameter DefaultValue="" Name="课程代码" SessionField="课程代码" 
             Type="String" />
     </SelectParameters>

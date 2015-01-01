@@ -10,7 +10,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
-using NewsTableAdapters;
+
 
 public partial class myImgTxt : System.Web.UI.UserControl
 {
@@ -40,38 +40,12 @@ public partial class myImgTxt : System.Web.UI.UserControl
             try
             {
                 Session["ShowMsg"] = showMsg;
-                Session["课程代码"] = "1";
-                string DM_Course = "1";
-                CONTENTDBTableAdapter ContentDb = new CONTENTDBTableAdapter();
-                DataTable dtContentDb = new DataTable();
-                dtContentDb = ContentDb.GetDataByCatNameID(showMsg, DM_Course);
+                
+               
 
 
 
-                //DataSet rds = new DataSet();
-                //DataTable table = rds.Tables.Add("My Table");
-                //table.Columns.Add(new DataColumn("ID", typeof(int)));
-                //table.Columns.Add(new DataColumn("Title", typeof(string)));
-                //table.Columns.Add(new DataColumn("Path", typeof(string)));
-
-                //剩下记录绑定到Repeater
-                //    for (int i = 1; i < dtContentDb.Tables[0].Rows.Count; i++)
-                //    {
-                //        DataRow row = dtContentDb.NewRow();
-                //        row["ID"] = Convert.ToInt32(dtContentDb.dtContentDb[0].Rows[i]["CID"].ToString().Trim());
-                //        row["Title"] = dtContentDb.dtContentDb[0].Rows[i]["CTitle"].ToString().Trim();
-                //        row["Path"] = "view.aspx?id=" + dtContentDb.dtContentDb[0].Rows[i]["CID"].ToString();
-                //        dtContentDb.Rows.Add(row);
-                //    }
-
-                //    myRepeater.DataSource = rds.Tables["My Table"].DefaultView;
-                //    myRepeater.DataBind();
-
-                //    rds.Clear();               
-                //    ds.Clear();
-                //    my.myconn.Dispose();
-                //    my.myconn.Close();
-                //}
+               
             }
             catch
             {
@@ -95,5 +69,9 @@ public partial class myImgTxt : System.Web.UI.UserControl
         {
             return false;
         }
+    }
+    protected void objCourseList_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
+    {
+        e.InputParameters["CatNameID"] = showMsg.ToString();
     }
 }

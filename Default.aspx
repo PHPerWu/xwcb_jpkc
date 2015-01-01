@@ -55,12 +55,12 @@
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tbody><tr> 
                 <td width="34%"><a href="http://xcy.hubu.edu.cn/jpkc/xz/5/0/74/1.htm" target="_blank"><img src="style/1_20080411030424_bHN3.jpg" width="180" height="220" border="0"></a></td>
-                <td width="66%"><uc1:myimgtext_Teacher ID="MyTeacher" showMsg="2" mySum="5" showLen="22" 
-                        runat="server" /><%--<p>&nbsp;&nbsp;&nbsp;<strong>廖声武,</strong>男，1961年出生，湖北潜江市人,汉族，中共党员，新闻学博士，湖北大学文学院新闻与传播系教授，硕士生导师。</p>
-<p>&nbsp;&nbsp; <strong>主要学术兼职：</strong>中国新闻教育学会理事，中国科技新闻学会会员，武汉市广播电视学会理事。</p>
-<p><strong>&nbsp;&nbsp; 主要研究方向：</strong>新闻业务。</p>
-<p>&nbsp;&nbsp; <strong>教学研究及获奖：</strong> 1.网络时代的电视科技新闻传播&nbsp; 中国科技新闻学会第六次学术年会上被评为一等奖&nbsp;2.论科技新闻的文化建设功能&nbsp;&nbsp; 中国科技新闻学会第五次学术年会上被评为二等奖<br>&nbsp;&nbsp;&nbsp;&nbsp; </p>
-<p align="right"><strong><a href="http://xcy.hubu.edu.cn/jpkc/xz/5/0/74/1.htm">…更多</a></strong></p>--%></td>
+                <td width="66%">
+                    <asp:Label ID="txtPrincipal" runat="server" Text="Label"></asp:Label>
+                    <p align="right"><strong>
+                        <a href="list.aspx?CatNameID=2">...更多</a></strong></p>
+                <%--<uc1:myimgtext_Teacher ID="MyTeacher" showMsg="2" mySum="5" showLen="22" 
+                        runat="server" />--%></td>
               </tr>
             </tbody></table>
            
