@@ -1,14 +1,18 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="TitleContent.ascx.cs" Inherits="myImgTxt" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="ListSingle.ascx.cs" Inherits="myImgTxt" %>
 
 
 <div id="content_09_02">
 <ASP:Repeater ID="myRepeater" runat="server" DataSourceID="objCourseList">
 <Itemtemplate>
 <p>
-    <a  href="view.aspx?CID=<%#Eval("CID")%>" target="_blank"><strong><%#Eval("CTITLE")%>：</strong><%#Eval("CCONTENT")%></a></p>
+   <tr> 
+                <td><span class="title"><a href="view.aspx?CID=<%#Eval("CID")%>" target="_self" ><%#Eval("CTITLE")%></a></span> 
+                  <!---->
+                  <span class="time"><%#Eval("CTIME")%></span> </td>
+              </tr>
 </Itemtemplate>
 </asp:Repeater>
-<p align="right"><strong><a href="list.aspx?CatNameID=<%=showMsg.ToString()%>">…更多</a></strong></p>
+
 <asp:ObjectDataSource ID="objCourseList" runat="server" OldValuesParameterFormatString="original_{0}" 
         SelectMethod="GetDataByTop" 
         TypeName="NewsTableAdapters.显示新闻列表TableAdapter" 

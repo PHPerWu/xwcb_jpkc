@@ -1,8 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
+<%@ Register Assembly="DevExpress.Web.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web.ASPxGridView" TagPrefix="dx" %>
+
+<%@ Register assembly="DevExpress.Web.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxEditors" tagprefix="dx" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-<%@ Register Src="~/Control/myImgTxt_Teacher.ascx" TagName="myImgText_Teacher" TagPrefix="uc1" %>
+    <%@ Register Src="~/Control/myImgTxt_Teacher.ascx" TagName="myImgText_Teacher" TagPrefix="uc1" %>
 <%@ Register Src="~/Control/TitleContent.ascx" TagName="TitleContent" TagPrefix="uc2" %>
+<%@ Register Src="~/Control/Img.ascx" TagName="Img" TagPrefix="uc3" %>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" class="MainTable">
@@ -219,13 +225,13 @@
             <h3 class="R"></h3>
           </td>
         </tr>
-        <tr> 
-          <td class="middle" align="left">·<a href="http://xcy.hubu.edu.cn/jpkc/xz/28/0/118/1.htm" target="_blank" style="color:">江作苏：责任造就公信力</a><br>·<a href="http://xcy.hubu.edu.cn/jpkc/xz/28/0/117/1.htm" target="_blank" style="color:">张勤耘：迈向主流—市民..</a><br>·<a href="http://xcy.hubu.edu.cn/jpkc/xz/28/0/116/1.htm" target="_blank" style="color:">单波：论我国新闻学想像..</a><br>·<a href="http://xcy.hubu.edu.cn/jpkc/xz/28/0/89/1.htm" target="_blank" style="color:">范春歌:记者不是单纯的..</a><br>·<a href="http://xcy.hubu.edu.cn/jpkc/xz/28/0/88/1.htm" target="_blank" style="color:">张以庆:   记录与形式</a><br>·<a href="http://xcy.hubu.edu.cn/jpkc/xz/28/0/87/1.htm" target="_blank" style="color:">罗以澄: 经济全球化与中..</a><br>·<a href="http://xcy.hubu.edu.cn/jpkc/xz/28/0/86/1.htm" target="_blank" style="color:">秦志希:关于文化传播全..</a><br>·<a href="http://xcy.hubu.edu.cn/jpkc/xz/28/0/85/1.htm" target="_blank" style="color:">黄家雄:党报理论宣传艺..</a><br> </td>
-        </tr>
+          
         <tr>
           <td class="foot">
-            <h3 class="L"></h3>
-            <h3 class="R"></h3>
+            <h3 class="L">
+                &nbsp;</h3>
+            <h3 class="R">
+                &nbsp;<uc2:TitleContent ID="TitleContent1" showMsg="9" mySum="2" showLen="22"  runat="server" />
           </td>
         </tr>
       </tbody></table>
@@ -245,8 +251,9 @@
 			</tr>
 			<tr>
 				<td class="middle" align="left">
-				<p align="center"><a href="http://xcy.hubu.edu.cn/jpkc/xz/25/"><img src="style/sc.jpg" width="115" height="152"> </a>
-</p></td>
+				<p align="center">&nbsp;<uc3:Img ID="Img" showMsg="10" mySum="1" showLen="22"  
+                        runat="server" />
+                </td>
 			</tr>
 			<tr>
 				<td class="foot">
@@ -268,8 +275,7 @@
           </td>
         </tr>
         <tr> 
-          <td class="middle" align="left">·<a href="http://xcy.hubu.edu.cn/jpkc/xz/23/0/114/liaoshengwu1.htm" target="_blank" style="color:">新闻写作第一讲(廖声武)</a><br>·<a href="http://xcy.hubu.edu.cn/jpkc/xz/23/0/114/liaoshengwu2.htm" target="_blank" style="color:">新闻写作第二讲(廖声武)</a><br>·<a href="http://xcy.hubu.edu.cn/jpkc/xz/23/0/114/liaoshengwu3.htm" target="_blank" style="color:">新闻写作第三讲(廖声武)</a><br>·<a href="http://xcy.hubu.edu.cn/jpkc/xz/23/0/114/zhangxuan1.htm" target="_blank" style="color:">新闻写作第四讲(张  萱)</a><br>·<a href="http://xcy.hubu.edu.cn/jpkc/xz/23/0/114/zhangxuan2.htm" target="_blank" style="color:">新闻写作第五讲(张  萱)</a><br>·<a href="http://xcy.hubu.edu.cn/jpkc/xz/23/0/114/zhangxuan3.htm" target="_blank" style="color:">新闻写作第六讲(张  萱)</a><br>·<a href="http://xcy.hubu.edu.cn/jpkc/xz/23/0/114/zhangxuan3.htm" target="_blank" <="" tr="">
-        </a></td></tr><tr>
+          <td class="middle" align="left"><uc2:TitleContent ID="TitleContent2" showMsg="7" mySum="6" showLen="22"  runat="server" /></td></tr><tr>
           <td class="foot">
             <h3 class="L"></h3>
             <h3 class="R"></h3>
@@ -290,7 +296,7 @@
           </td>
         </tr>
         <tr> 
-          <td class="middle" align="left">·<a href="http://xcy.hubu.edu.cn/jpkc/xz/31/0/130/1.htm" target="_blank" style="color:">2005级学生黄伟获奖证书</a><br>·<a href="http://xcy.hubu.edu.cn/jpkc/xz/26/0/104/1.htm" target="_blank" style="color:">2004级学生徐旭实习感言</a><br>·<a href="http://xcy.hubu.edu.cn/jpkc/xz/26/0/97/1.htm" target="_blank" style="color:">2004级学生夏金双实习感言</a><br>·<a href="http://xcy.hubu.edu.cn/jpkc/xz/26/0/96/1.htm" target="_blank" style="color:">2003级学生杨威实习感言</a><br>·<a href="http://xcy.hubu.edu.cn/jpkc/xz/26/0/95/1.htm" target="_blank" style="color:">2002级学生张继木实习感言</a><br>·<a href="http://xcy.hubu.edu.cn/jpkc/xz/26/0/79/1.htm" target="_blank" style="color:">2001级学生史果实习感言</a><br>·<a href="http://xcy.hubu.edu.cn/jpkc/xz/26/0/78/1.htm" target="_blank" style="color:">2000级学生严珑实习感言</a><br>·<a href="http://xcy.hubu.edu.cn/jpkc/xz/26/0/77/1.htm" target="_blank" style="color:">1999级学生陈小航实习感言</a><br> </td>
+          <td class="middle" align="left"><uc2:TitleContent ID="TitleContent3" showMsg="6" mySum="8" showLen="22"  runat="server" /></td>
         </tr>
         <tr>
           <td class="foot">

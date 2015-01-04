@@ -72,7 +72,6 @@ public partial class myImgTxt : System.Web.UI.UserControl
     }
     protected void objCourseList_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
     {
-        e.InputParameters["p_CatNameID"] = showMsg.ToString();
-        e.InputParameters["p_显示条数"] = mySum.ToString();
+        e.InputParameters["CatNameID"] = showMsg.ToString();
     }
 }
