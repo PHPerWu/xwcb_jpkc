@@ -103,12 +103,64 @@
         </tr>
         <tr> 
           <td class="middle" align="left"> 
-             <marquee behavior="scroll" direction="up" onmouseover="this.stop()" onmouseout="this.start()" scrolldelay="0" scrollamount="2">
-
-<b>· <a href="http://xcy.hubu.edu.cn/jpkc/xz/5/0/74/1.htm">廖声武教授</a></b>，湖北大学文学院副院长，硕士生导师，中国新闻教育学会理事，中国科技新闻学会会员，武汉市广播电视学会理事。<br>   <br>  
+             <marquee direction="up" scrolldelay="1" scrollamount="1" onmouseout="if(document.all!=null){this.start()}" onmouseover="if(document.all!=null){this.stop()}" height="228">
+          <asp:Repeater ID="repRowWord" runat="server" DataSourceID="objRowWord">
+            <ItemTemplate>
+                <b>· <a href="view.aspx?CID=<%#Eval("CID") %>"><%#Eval("CTITLE") %></a></b><a href="view.aspx?CID=<%#Eval("CID") %>">，<%#Eval("CCONTENT") %></a><br>   <br>  
+ 
+            </ItemTemplate>
+          </asp:Repeater>
+          <%--<b>· <a href="http://xcy.hubu.edu.cn/jpkc/xz/5/0/74/1.htm">廖声武教授</a></b>，湖北大学文学院副院长，硕士生导师，中国新闻教育学会理事，中国科技新闻学会会员，武汉市广播电视学会理事。<br>   <br>  
+<b>· <a href="style/湖北大学新闻写作学精品课程.htm">张萱</a></b>，博士，湖北大学文学院新闻系教师。<br> <br> 
 <b>· <a href="http://xcy.hubu.edu.cn/jpkc/xz/5/0/73/1.htm">黄家雄教授</a></b>，湖北大学文学院新闻系主任，硕士生导师，湖北省新闻学会理事。 <br> <br>  
 <b>· <a href="http://xcy.hubu.edu.cn/jpkc/xz/5/0/72/1.htm">杨翠芳副教授</a></b>，湖北大学文学院新闻系教师。<br> <br>  
-<b>· <a href="http://xcy.hubu.edu.cn/jpkc/xz/5/0/70/1.htm">聂远征</a></b>，湖北大学文学院新闻系教师。<br> <br></marquee>   </td>
+<b>· <a href="http://xcy.hubu.edu.cn/jpkc/xz/5/0/70/1.htm">聂远征</a></b>，湖北大学文学院新闻系教师。<br> <br></marquee>--%><asp:ObjectDataSource ID="objRowWord" runat="server" DeleteMethod="Delete" 
+        InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
+        SelectMethod="GetDataByCatNameID" 
+        TypeName="NewsTableAdapters.CONTENTDBTableAdapter" UpdateMethod="Update">
+    <DeleteParameters>
+        <asp:Parameter Name="Original_CID" Type="String" />
+    </DeleteParameters>
+    <InsertParameters>
+        <asp:Parameter Name="CID" Type="String" />
+        <asp:Parameter Name="CTITLE" Type="String" />
+        <asp:Parameter Name="CCONTENT" Type="Object" />
+        <asp:Parameter Name="CAUTHOR" Type="String" />
+        <asp:Parameter Name="课程代码" Type="String" />
+        <asp:Parameter Name="CATNAMEID" Type="Decimal" />
+        <asp:Parameter Name="CATNAME" Type="String" />
+        <asp:Parameter Name="CSUM" Type="Decimal" />
+        <asp:Parameter Name="CTIME" Type="DateTime" />
+        <asp:Parameter Name="CPIC" Type="String" />
+        <asp:Parameter Name="备用1" Type="String" />
+        <asp:Parameter Name="备用2" Type="String" />
+        <asp:Parameter Name="备用3" Type="String" />
+        <asp:Parameter Name="备用4" Type="String" />
+        <asp:Parameter Name="备用5" Type="String" />
+    </InsertParameters>
+    <SelectParameters>
+        <asp:Parameter DefaultValue="15" Name="CatNameID" Type="Decimal" />
+        <asp:SessionParameter DefaultValue="" Name="课程代码" SessionField="课程代码" 
+            Type="String" />
+    </SelectParameters>
+    <UpdateParameters>
+        <asp:Parameter Name="CTITLE" Type="String" />
+        <asp:Parameter Name="CCONTENT" Type="Object" />
+        <asp:Parameter Name="CAUTHOR" Type="String" />
+        <asp:Parameter Name="课程代码" Type="String" />
+        <asp:Parameter Name="CATNAMEID" Type="Decimal" />
+        <asp:Parameter Name="CATNAME" Type="String" />
+        <asp:Parameter Name="CSUM" Type="Decimal" />
+        <asp:Parameter Name="CTIME" Type="DateTime" />
+        <asp:Parameter Name="CPIC" Type="String" />
+        <asp:Parameter Name="备用1" Type="String" />
+        <asp:Parameter Name="备用2" Type="String" />
+        <asp:Parameter Name="备用3" Type="String" />
+        <asp:Parameter Name="备用4" Type="String" />
+        <asp:Parameter Name="备用5" Type="String" />
+        <asp:Parameter Name="Original_CID" Type="String" />
+    </UpdateParameters>
+    </asp:ObjectDataSource>   </td>
         </tr>
         <tr> 
           <td class="foot"> 
@@ -129,8 +181,7 @@
           </td>
         </tr>
         <tr> 
-          <td class="middle" valign="top" align="left"> &nbsp;&nbsp;&nbsp;&nbsp;课程的目标是培养优秀职业记者，教会未来的记者如何准确地报道新闻、精确、有力地写作新闻。在课堂上讲述新闻写作理论、分析国内外新近新闻作品的同时，还带领学生走出课堂，深入社会，把生活在学校里边的一种学生的视觉，转变为一种记者的视觉去看问题，培养实践能力、创新能力强，有高度社会责任感的新闻从业人才。 
-          </td>
+          <td class="middle" valign="top" align="left">  <asp:Label ID="labAim" runat="server" Text="Label"></asp:Label> </td>
         </tr>
         <tr> 
           <td class="foot"> 

@@ -19,5 +19,9 @@ public partial class list : System.Web.UI.Page
         dt = cat.GetDataByCatID(catID);
         string catName = dt.Rows[0]["CATNAME"].ToString();
         labTitle.Text= catName;
+
+        CONTENTDBTableAdapter ContentDb = new CONTENTDBTableAdapter();
+        dt = ContentDb.GetDataByCatNameID(14, Session["课程代码"].ToString());
+        labAim.Text = dt.Rows[0]["CCONTENT"].ToString();
     }
 }
