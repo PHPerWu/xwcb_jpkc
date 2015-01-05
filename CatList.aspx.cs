@@ -4,12 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using NewsTableAdapters;
+using System.Data;
 
-public partial class MasterPage : System.Web.UI.MasterPage
+
+public partial class list : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        DateTime time = DateTime.Now;
-        lblTime.Text = time.Year.ToString();
+
     }
 }

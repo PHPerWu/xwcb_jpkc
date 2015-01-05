@@ -1,5 +1,8 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
 
+<%@ Register Assembly="DevExpress.Web.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web.ASPxEditors" TagPrefix="dx" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -44,8 +47,11 @@
              }
 //-->
 </script><script language="JavaScript" src="style/inc.js"></script><script language="JavaScript" src="style/default.js"></script>
+  
+  
+   <%@ Register Src="~/Control/mybanner.ascx" TagName="mybanner" TagPrefix="uc0" %>
     <asp:ContentPlaceHolder id="head" runat="server">
-    dd
+
     </asp:ContentPlaceHolder>
 </head>
 <body>
@@ -79,23 +85,7 @@
   <tbody><tr>
     <td>
 
-	<a href="http://xcy.hubu.edu.cn/jpkc/xz/" target="" style="color:;">【网站首页】</a> 
-
-	<a href="http://xcy.hubu.edu.cn/jpkc/xz/30/0/101/1.htm" target="_blank" style="color:;">【课程申报】</a> 
-
-	<a href="http://xcy.hubu.edu.cn/jpkc/xz/5/" target="_blank" style="color:;">【教师队伍】</a> 
-
-	<a href="http://xcy.hubu.edu.cn/jpkc/xz/6/" target="_blank" style="color:;">【课程介绍】</a> 
-
-	<a href="http://xcy.hubu.edu.cn/jpkc/xz/12/" target="_blank" style="color:;">【教学科研】</a> 
-
-	<a href="http://xcy.hubu.edu.cn/jpkc/xz/1/" target="_blank" style="color:;">【教学效果】</a> 
-
-	<a href="http://xcy.hubu.edu.cn/jpkc/xz/11/" target="_blank" style="color:;">【教学实践】</a> 
-
-	<a href="http://xcy.hubu.edu.cn/jpkc/xz/21/" target="_blank" style="color:;">【多媒体教学】</a> 
-
-	<a href="http://xcy.hubu.edu.cn/jpkc/xz/guestbook" target="_blank" style="color:;">【在线交流】</a> 
+	<uc0:mybanner ID="Professor" runat="server" />
 </td>
   </tr>
 </tbody></table>
@@ -147,7 +137,9 @@
 
 			<a href="http://jcr.ruc.edu.cn/" target="_blank" title="描述:">中国人民大学新闻学院</a>&nbsp;
 
-			<a href="http://www.cuc.edu.cn/" target="_blank" title="描述:">中国传媒大学</a>&nbsp;
+			<a href="http://www.cuc.edu.cn/" target="_blank" title="描述:">中国传媒大学</a>&nbsp;<br />
+
+            <a href="http://news.hubu.edu.cn/" target="_blank" title="描述:">湖北大学新闻文化网</a>&nbsp;
 </div>
           </td>
         </tr>
@@ -168,8 +160,11 @@
   <tbody><tr> 
     <td align="center"><br>湖北大学文学院版权所有
 <br>
-Supported by <a href="http://www.chuanmeiren.cn/" target="_blank">CHUANMEIREN</a>  &#169; 2006-09<br>
-      制作：姜伟<br>
+Supported by <a href="http://www.cnblogs.com/PHPer-Wu/" target="_blank">PHPer</a>  &#169; 
+        <dx:ASPxLabel ID="lblTime" runat="server" Text="2015">
+        </dx:ASPxLabel>
+        <br>
+      制作：湖北大学软件研究所<br>
 	  　</td>
     
   </tr>

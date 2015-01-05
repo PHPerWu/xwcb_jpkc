@@ -9,6 +9,7 @@
     <%@ Register Src="~/Control/myImgTxt_Teacher.ascx" TagName="myImgText_Teacher" TagPrefix="uc1" %>
 <%@ Register Src="~/Control/TitleContent.ascx" TagName="TitleContent" TagPrefix="uc2" %>
 <%@ Register Src="~/Control/Img.ascx" TagName="Img" TagPrefix="uc3" %>
+<%@ Register Src="~/Control/myRollPic.ascx" TagName="myRollPic" TagPrefix="uc4" %>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" class="MainTable">
@@ -23,11 +24,64 @@
             <h3 class="R"></h3></td>
         </tr>
         <tr> 
-          <td class="middle" align="left"><marquee direction="up" scrolldelay="1" scrollamount="1" onmouseout="if(document.all!=null){this.start()}" onmouseover="if(document.all!=null){this.stop()}" height="228"><b>· <a href="http://xcy.hubu.edu.cn/jpkc/xz/5/0/74/1.htm">廖声武教授</a></b>，湖北大学文学院副院长，硕士生导师，中国新闻教育学会理事，中国科技新闻学会会员，武汉市广播电视学会理事。<br>   <br>  
+          <td class="middle" align="left"><marquee direction="up" scrolldelay="1" scrollamount="1" onmouseout="if(document.all!=null){this.start()}" onmouseover="if(document.all!=null){this.stop()}" height="228">
+          <asp:Repeater ID="repRowWord" runat="server" DataSourceID="objRowWord">
+            <ItemTemplate>
+                <b>· <a href="view.aspx?CID=<%#Eval("CID") %>"><%#Eval("CTITLE") %></a></b><a href="view.aspx?CID=<%#Eval("CID") %>">，<%#Eval("CCONTENT") %></a><br>   <br>  
+ 
+            </ItemTemplate>
+          </asp:Repeater>
+          <%--<b>· <a href="http://xcy.hubu.edu.cn/jpkc/xz/5/0/74/1.htm">廖声武教授</a></b>，湖北大学文学院副院长，硕士生导师，中国新闻教育学会理事，中国科技新闻学会会员，武汉市广播电视学会理事。<br>   <br>  
 <b>· <a href="style/湖北大学新闻写作学精品课程.htm">张萱</a></b>，博士，湖北大学文学院新闻系教师。<br> <br> 
 <b>· <a href="http://xcy.hubu.edu.cn/jpkc/xz/5/0/73/1.htm">黄家雄教授</a></b>，湖北大学文学院新闻系主任，硕士生导师，湖北省新闻学会理事。 <br> <br>  
 <b>· <a href="http://xcy.hubu.edu.cn/jpkc/xz/5/0/72/1.htm">杨翠芳副教授</a></b>，湖北大学文学院新闻系教师。<br> <br>  
-<b>· <a href="http://xcy.hubu.edu.cn/jpkc/xz/5/0/70/1.htm">聂远征</a></b>，湖北大学文学院新闻系教师。<br> <br></marquee></td>
+<b>· <a href="http://xcy.hubu.edu.cn/jpkc/xz/5/0/70/1.htm">聂远征</a></b>，湖北大学文学院新闻系教师。<br> <br></marquee>--%><asp:ObjectDataSource ID="objRowWord" runat="server" DeleteMethod="Delete" 
+        InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" 
+        SelectMethod="GetDataByCatNameID" 
+        TypeName="NewsTableAdapters.CONTENTDBTableAdapter" UpdateMethod="Update">
+    <DeleteParameters>
+        <asp:Parameter Name="Original_CID" Type="String" />
+    </DeleteParameters>
+    <InsertParameters>
+        <asp:Parameter Name="CID" Type="String" />
+        <asp:Parameter Name="CTITLE" Type="String" />
+        <asp:Parameter Name="CCONTENT" Type="Object" />
+        <asp:Parameter Name="CAUTHOR" Type="String" />
+        <asp:Parameter Name="课程代码" Type="String" />
+        <asp:Parameter Name="CATNAMEID" Type="Decimal" />
+        <asp:Parameter Name="CATNAME" Type="String" />
+        <asp:Parameter Name="CSUM" Type="Decimal" />
+        <asp:Parameter Name="CTIME" Type="DateTime" />
+        <asp:Parameter Name="CPIC" Type="String" />
+        <asp:Parameter Name="备用1" Type="String" />
+        <asp:Parameter Name="备用2" Type="String" />
+        <asp:Parameter Name="备用3" Type="String" />
+        <asp:Parameter Name="备用4" Type="String" />
+        <asp:Parameter Name="备用5" Type="String" />
+    </InsertParameters>
+    <SelectParameters>
+        <asp:Parameter DefaultValue="15" Name="CatNameID" Type="Decimal" />
+        <asp:SessionParameter DefaultValue="" Name="课程代码" SessionField="课程代码" 
+            Type="String" />
+    </SelectParameters>
+    <UpdateParameters>
+        <asp:Parameter Name="CTITLE" Type="String" />
+        <asp:Parameter Name="CCONTENT" Type="Object" />
+        <asp:Parameter Name="CAUTHOR" Type="String" />
+        <asp:Parameter Name="课程代码" Type="String" />
+        <asp:Parameter Name="CATNAMEID" Type="Decimal" />
+        <asp:Parameter Name="CATNAME" Type="String" />
+        <asp:Parameter Name="CSUM" Type="Decimal" />
+        <asp:Parameter Name="CTIME" Type="DateTime" />
+        <asp:Parameter Name="CPIC" Type="String" />
+        <asp:Parameter Name="备用1" Type="String" />
+        <asp:Parameter Name="备用2" Type="String" />
+        <asp:Parameter Name="备用3" Type="String" />
+        <asp:Parameter Name="备用4" Type="String" />
+        <asp:Parameter Name="备用5" Type="String" />
+        <asp:Parameter Name="Original_CID" Type="String" />
+    </UpdateParameters>
+    </asp:ObjectDataSource></td>
         </tr>
 		<tr><td class="foot"><h3 class="L"></h3><h3 class="R"></h3></td></tr>
       </tbody></table>
@@ -96,10 +150,9 @@
             <h3 class="R"></h3></td>
         </tr>
         <tr> 
-          <td class="middle" align="left"><uc2:TitleContent ID="Professor" showMsg="12" mySum="2" showLen="22"  runat="server" /><%--<p><strong>武汉大学新闻与传播学院院长罗以澄：</strong>新闻写作教师团队提高了学生新闻写作兴趣，学生走上工作岗位后获得工作单位一致认可。</p>
+          <td class="middle" align="left"><uc2:TitleContent ID="Professor" showMsg="12" mySum="2" showLen="22"  runat="server" />
 <p>&nbsp;</p>
-<p><strong>湖北大学视导员谌宗恕：</strong>新闻专业学生写作能力强这一优势的形成，我们新闻写作课教师团队功不可没。</p><strong>
-<p align="right"><strong><a href="http://xcy.hubu.edu.cn/jpkc/xz/2/">…更多</a></strong></p></strong> --%></td>
+</td>
         </tr>
         <tr><td class="foot"><h3 class="L"></h3><h3 class="R"></h3></td></tr>
       </tbody></table></td>
@@ -142,8 +195,9 @@
           </td>
         </tr>
         <tr> 
-          <td class="middle"><div id="demo" style="OVERFLOW: hidden; WIDTH: 100%"> 
-<table cellpadding="0" align="left" border="0" cellspace="0"> 
+          <td class="middle"><div id="demo" style="overflow: hidden; WIDTH: 100%"> 
+          <uc4:myRollPic ID="myRollPic" runat="server" />
+<%--<table cellpadding="0" align="left" border="0" cellspace="0"> 
 <tbody> 
 <tr> 
 <td id="demo1" valign="top" height="100"> 
@@ -167,7 +221,7 @@
 </tr></tbody></table> 
 </td> 
 <td id="demo2" valign="top"> 
-<table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><%--<tbody><tr>
 
 <td width="10%"><div style="width:100%;text-align :center;" align="center"> <div style="width:100px;height:130px;border:5px solid #def4c4;"><a href="http://xcy.hubu.edu.cn/jpkc/xz/20/0/61/1.htm"><img style="width:100px;height:130px;border:1px solid #fff;" border="0" src="style/1_20090410020428_bGhn.jpg" width="100" height="80"></a></div></div></td>
 
@@ -185,7 +239,8 @@
 <td width="10%"><div style="width:100%;text-align :center;" align="center"> <div style="width:100px;height:130px;border:5px solid #def4c4;"><a href="http://xcy.hubu.edu.cn/jpkc/xz/20/0/125/1.htm"><img style="width:100px;height:130px;border:1px solid #fff;" border="0" src="style/1_20090413010446_JUQ2JURDJUNBJUEyJUMxJUQ2.jpg" width="100" height="80"></a></div></div></td>
 
 </tr></tbody></table> 
-</td></tr></tbody></table></div> 
+</td></tr></tbody></table>--%>
+</div> 
 <script>
     var speed = 30
     demo2.innerHTML = demo1.innerHTML
@@ -315,5 +370,6 @@
     
   </tr>
 </tbody></table>
+
 </asp:Content>
 

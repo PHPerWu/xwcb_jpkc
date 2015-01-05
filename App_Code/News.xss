@@ -8,7 +8,7 @@
   <Shapes>
     <Shape ID="DesignTable:CONTENTDB" ZOrder="2" X="470" Y="174" Height="362" Width="432" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:显示新闻列表" ZOrder="3" X="178" Y="309" Height="305" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
-    <Shape ID="DesignTable:CATDB" ZOrder="1" X="185" Y="215" Height="153" Width="269" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
+    <Shape ID="DesignTable:CATDB" ZOrder="1" X="185" Y="215" Height="172" Width="226" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

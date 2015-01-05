@@ -1,10 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="list.aspx.cs" Inherits="list" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="CatList.aspx.cs" Inherits="list" %>
 
 <%@ Register Assembly="DevExpress.Web.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
     Namespace="DevExpress.Web.ASPxEditors" TagPrefix="dx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-<%@ Register Src="~/Control/ListSingle.ascx" TagName="ListSingle" TagPrefix="uc1" %>
+<%@ Register Src="~/Control/CatList.ascx" TagName="CatList" TagPrefix="uc1" %>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 <div style="display:none;"><table width="100%" border="0" cellspacing="0" cellpadding="0" id="AjaxEditTable"><tbody><tr><td class="head"><h3 class="L"></h3><h3 class="R"></h3><span class="eidtmodule" onclick="this.offsetParent.offsetParent.offsetParent.style.display=&#39;none&#39;" onmouseover="this.style.cursor=&#39;hand&#39;">关闭</span></td></tr><tr> <td class="middle"></td></tr></tbody></table></div>
@@ -25,10 +25,7 @@
     <td width="75%" height="393" valign="top" class="Main"> 
       <table width="100%" border="0" cellspacing="0" cellpadding="0" class="guide">
         <tbody><tr> 
-          <td><a href="Default.aspx" class="guide_menu">&gt;首页</a> -&gt; <a href="list.aspx?CatNameID=<%=Convert.ToInt16(Request.QueryString["CatNameID"].ToString()) %>" class="guide_menu">
-                        <dx:ASPxLabel ID="labTitle" runat="server" Text="ASPxLabel">
-                        </dx:ASPxLabel>
-                    </a></td>
+          <td><a href="Default.aspx" class="guide_menu">&gt;首页</a> -&gt; </td>
         </tr>
       </tbody></table>
       <!--****************************栏目介绍开始****************************-->
@@ -76,7 +73,7 @@
             <table width="100%" border="0" cellspacing="0" cellpadding="0" class="listarticle">
               <!---->
               <tbody>
-                <uc1:ListSingle ID="Professor" showMsg="12" mySum="2" showLen="22"  
+                <uc1:CatList ID="CatList" showMsg="12" mySum="2" showLen="22"  
                       runat="server" />
             </tbody></table>
             <!---->
