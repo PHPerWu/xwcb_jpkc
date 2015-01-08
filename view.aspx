@@ -58,7 +58,7 @@
         System.Data.DataTableReader dtr=new System.Data.DataTableReader(dr);
         if (dtr.Read())
         {%>
-            <video src="http://202.114.154.193/jpkc/Uploadfile/1.mp4" width="320" height="240" controls="controls">
+            <video src="Uploadfile/dr.Rows[0]['VID'].ToString()" width="320" height="240" controls="controls">
                 <div>该浏览器不支持播放视频，请更换最新版浏览器</div>
             </video> 
         <%}
