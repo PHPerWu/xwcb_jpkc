@@ -50,6 +50,19 @@
                 <td align="left" class="content_word">
     <dx:ASPxLabel ID="labContent" runat="server" Text="ASPxLabel">
     </dx:ASPxLabel>
+    <%
+        string cid = Request.QueryString["CID"].ToString();
+        NewsTableAdapters.VIDEODBTableAdapter vd = new NewsTableAdapters.VIDEODBTableAdapter();
+        System.Data.DataTable dr = new System.Data.DataTable();
+        dr = vd.GetDataByID(cid);
+        System.Data.DataTableReader dtr=new System.Data.DataTableReader(dr);
+        if (dtr.Read())
+        {%>
+            <video src="http://202.114.154.193/jpkc/Uploadfile/1.mp4" width="320" height="240" controls="controls">
+                <div>该浏览器不支持播放视频，请更换最新版浏览器</div>
+            </video> 
+        <%}
+         %>
 
 </td>
               </tr>
