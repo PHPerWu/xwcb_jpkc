@@ -17,6 +17,7 @@ public partial class view : System.Web.UI.Page
         dt = ContentDb.GetDataByCID(cid);
         labContent.Text = dt.Rows[0]["CCONTENT"].ToString();
         labTitle.Text = dt.Rows[0]["CTITLE"].ToString();
+        
        
     }
 }

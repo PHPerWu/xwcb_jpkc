@@ -38,7 +38,10 @@
              
             <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:8px;border-bottom:1px solid #ccc;">
               <tbody><tr>
-                <td align="center"> </td>
+                <td align="center">
+               
+                 
+                </td>
               </tr>
             </tbody></table>
             
@@ -47,6 +50,7 @@
                 <td align="left" class="content_word">
     <dx:ASPxLabel ID="labContent" runat="server" Text="ASPxLabel">
     </dx:ASPxLabel>
+
 </td>
               </tr>
             </tbody></table>
