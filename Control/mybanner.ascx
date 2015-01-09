@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="mybanner.ascx.cs" Inherits="mybanner" %>
 
 <div id="nav_03">
-<a href="Default.aspx">【网站主页】</a>
+<a href="Index.aspx">【网站主页】</a>
     <asp:Repeater ID="repBanner" runat="server" DataSourceID="objBanner">
         <ItemTemplate>
     <a href="list.aspx?CatNameID=<%#Eval("CATID") %>">【<%#Eval("CATNAME")%>】</a>

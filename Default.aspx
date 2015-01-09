@@ -20,7 +20,7 @@
       <table width="100%" border="0" cellspacing="0" cellpadding="0" class="dragTable">
         <tbody><tr> 
           <td class="head"><h3 class="L"></h3>
-            <span class="TAG"><b>教师队伍</b></span> 
+            <span class="TAG" style="color:rgb(56,104,47)"><b>教师队伍</b></span> 
             <h3 class="R"></h3></td>
         </tr>
         <tr> 
@@ -89,7 +89,7 @@
       <table width="100%" border="0" cellspacing="0" cellpadding="0" class="dragTable">
         <tbody><tr> 
           <td class="head"><h3 class="L"></h3>
-            <span class="TAG"><a href="http://xcy.hubu.edu.cn/jpkc/xz/6/"><strong>课程目标</strong></a></span> 
+            <span class="TAG"><a style="color:rgb(56,104,47)"><strong>课程目标</strong></a></span> 
             <h3 class="R"></h3></td>
         </tr>
         <tr> 
@@ -109,7 +109,7 @@
       <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" class="dragTable">
         <tbody><tr> 
           <td class="head">
-			<p align="center"><b>课程负责人介绍</b></p></td>
+			<p style="color:rgb(56,104,47)" align="center"><b>课程负责人介绍</b></p></td>
         </tr>
         <tr> 
           <td class="middle">
@@ -133,7 +133,7 @@
       
        <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" class="dragTable">
  <tbody><tr> 
-          <td class="head"><h3 class="L" align="center"><b>教学效果评价</b></h3></td>
+          <td class="head"><h3 style="color:rgb(56,104,47)" class="L" align="center"><b>教学效果评价</b></h3></td>
         </tr>
      </tbody></table>
      
@@ -146,7 +146,7 @@
   <table width="100%" border="0" cellspacing="0" cellpadding="0" class="dragTable">
         <tbody><tr> 
           <td class="head"><h3 class="L"></h3>
-            <span class="TAG">专家评价</span> 
+            <span  style="color:rgb(56,104,47)" class="TAG">专家评价</span> 
             <h3 class="R"></h3></td>
         </tr>
         <tr> 
@@ -166,7 +166,7 @@
  <table width="100%" border="0" cellspacing="0" cellpadding="0" class="dragTable">
         <tbody><tr> 
           <td class="head"><h3 class="L"></h3>
-            <span class="TAG">学生评价</span> 
+            <span style="color:rgb(56,104,47)" class="TAG">学生评价</span> 
             <h3 class="R"></h3></td>
         </tr>
         <tr> 
@@ -276,7 +276,7 @@
         <tbody><tr> 
           <td class="head">
             <h3 class="L"></h3>
-            <span class="TAG"><a href="http://xcy.hubu.edu.cn/jpkc/xz/28/"><strong>前沿讲座</strong></a></span>
+            <span class="TAG"><a href="list.aspx?CatNameID=9" style="color:rgb(56,104,47)"><strong>前沿讲座</strong></a></span>
             <h3 class="R"></h3>
           </td>
         </tr>
@@ -300,7 +300,7 @@
 			<tbody><tr>
 				<td class="head">
 				<h3 class="L"></h3>
-				<span class="TAG"><p><a href="http://xcy.hubu.edu.cn/jpkc/xz/25/"><strong>教材建设</strong></a></p></span>
+				<span class="TAG"><p><a href="list.aspx?CatNameID=10" style="color:rgb(56,104,47)"><strong>教材建设</strong></a></p></span>
             	<h3 class="R"></h3>
 				</td>
 			</tr>
@@ -325,7 +325,7 @@
         <tbody><tr> 
           <td class="head">
             <h3 class="L"></h3>
-            <span class="TAG"><p><a href="http://xcy.hubu.edu.cn/jpkc/xz/21/"><strong>多媒体教学</strong></a></p></span>
+            <span class="TAG"><p><a href="list.aspx?CatNameID=7" style="color:rgb(56,104,47)"><strong>多媒体教学</strong></a></p></span>
             <h3 class="R"></h3>
           </td>
         </tr>
@@ -346,7 +346,7 @@
         <tbody><tr> 
           <td class="head">
             <h3 class="L"></h3>
-            <span class="TAG"><p><a href="http://xcy.hubu.edu.cn/jpkc/xz/11/"><strong>教学实践</strong></a></p></span>
+            <span class="TAG"><p><a href="list.aspx?CatNameID=6" style="color:rgb(56,104,47)"><strong>教学实践</strong></a></p></span>
             <h3 class="R"></h3>
           </td>
         </tr>
