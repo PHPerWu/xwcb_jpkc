@@ -158,13 +158,14 @@
 -->
 <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" id="footer">
   <tbody><tr> 
-    <td align="center"><br>湖北大学文学院版权所有
+    <td align="center"><br>湖北大学新闻传播学院版权所有
 <br>
 Supported by <a href="http://www.cnblogs.com/PHPer-Wu/" target="_blank">PHPer</a>  &#169; 
         <dx:ASPxLabel ID="lblTime" runat="server" Text="2015">
         </dx:ASPxLabel>
         <br>
       制作：湖北大学软件研究所<br>
+      <a href="Default.aspx">管理登录</a>
 	  　</td>
     
   </tr>

@@ -72,8 +72,14 @@ public partial class myImgTxt : System.Web.UI.UserControl
     }
     protected void objCourseList_Selecting(object sender, ObjectDataSourceSelectingEventArgs e)
     {
-        string catID = Request.QueryString["CatNameID"].ToString();
-        e.InputParameters["p_CatNameID"] = catID;
-        e.InputParameters["p_显示条数"] = mySum.ToString();
+        try
+        {
+            string catID = Request.QueryString["CatNameID"].ToString();
+            e.InputParameters["p_CatNameID"] = catID;
+            e.InputParameters["p_显示条数"] = mySum.ToString();
+        }
+        catch {
+            Response.Write("<script>alert('非法操作！');window.location.href='index.aspx';</script>"); 
+        }
     }
 }

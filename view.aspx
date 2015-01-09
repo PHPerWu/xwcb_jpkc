@@ -52,6 +52,8 @@
     <dx:ASPxLabel ID="labContent" runat="server" Text="ASPxLabel">
     </dx:ASPxLabel>
     <%
+        try
+        {
         string cid = Request.QueryString["CID"].ToString();
         NewsTableAdapters.TA_新闻附件TableAdapter vd = new NewsTableAdapters.TA_新闻附件TableAdapter();
         System.Data.DataTable dr = new System.Data.DataTable();
@@ -78,6 +80,11 @@
                 </script>
                 <% 
             }
+        }
+        }
+        catch
+        {
+            Response.Write("<script>alert('非法操作！');window.location.href='index.aspx';</script>"); 
         }
         
          %>
