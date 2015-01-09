@@ -15,6 +15,7 @@ public partial class _Default : System.Web.UI.Page
         {
             Session["课程代码"] = "001";
             CONTENTDBTableAdapter ContentDb = new CONTENTDBTableAdapter();
+
             DataTable dt = new DataTable();
             dt = ContentDb.GetDataByCatNameID(11, Session["课程代码"].ToString());
             labPrincipal.Text = dt.Rows[0]["CCONTENT"].ToString();

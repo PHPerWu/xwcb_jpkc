@@ -4,6 +4,7 @@
     Namespace="DevExpress.Web.ASPxEditors" TagPrefix="dx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<script type="text/javascript" src="style/pdfobject.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
@@ -52,17 +53,35 @@
     </dx:ASPxLabel>
     <%
         string cid = Request.QueryString["CID"].ToString();
-        NewsTableAdapters.VIDEODBTableAdapter vd = new NewsTableAdapters.VIDEODBTableAdapter();
+        NewsTableAdapters.TA_新闻附件TableAdapter vd = new NewsTableAdapters.TA_新闻附件TableAdapter();
         System.Data.DataTable dr = new System.Data.DataTable();
-        dr = vd.GetDataByID(cid);
+        dr = vd.GetDataByNewsID(cid);
         System.Data.DataTableReader dtr=new System.Data.DataTableReader(dr);
         if (dtr.Read())
-        {%>
-            <video src="Uploadfile/dr.Rows[0]['VID'].ToString()" width="320" height="240" controls="controls">
+        {
+            if (dr.Rows[0]["ATTRIBUTE_1"].ToString() == "视频")
+            {
+            %>
+            <video src="Uploadfile/<%="dr.Rows[0]['附件名'].ToString()"%>" width="320" height="240" controls="controls">
                 <div>该浏览器不支持播放视频，请更换最新版浏览器</div>
             </video> 
-        <%}
+        <%
+        
+            }
+            else if (dr.Rows[0]["ATTRIBUTE_1"].ToString() == "PDF")
+            {
+                %>
+               <script type="text/javascript">
+                   window.onload = function () {
+                       var myPDF = new PDFObject({ url: "Uploadfile/<%="dr.Rows[0]['附件名'].ToString()"%>" }).embed();
+                   };
+                </script>
+                <% 
+            }
+        }
+        
          %>
+
 
 </td>
               </tr>
@@ -72,10 +91,10 @@
               <tbody><tr> 
                 <td colspan="2" align="center" class="page"></td>
               </tr>
-              <tr> 
+             <%-- <tr> 
                 <td width="50%" align="left">[<a href="http://xcy.hubu.edu.cn/jpkc/xz/6/0/34/1.htm">上一篇</a>]<a href="http://xcy.hubu.edu.cn/jpkc/xz/6/0/34/1.htm" title="教学大纲">教学大纲</a></td>
                 <td width="50%" align="right">[<a href="http://xcy.hubu.edu.cn/jpkc/xz/6/0/128/1.htm">下一篇</a>]<a href="http://xcy.hubu.edu.cn/jpkc/xz/6/0/128/1.htm" title="试题及答案">试题及答案</a></td>
-              </tr>
+              </tr>--%>
             </tbody></table>
           </td>
         </tr>
@@ -93,16 +112,7 @@
 </tbody></table>
 <!--
 -->
-<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" id="footer">
-  <tbody><tr> 
-    <td align="center"><br>湖北大学文学院版权所有
-<br>
-Supported by <a href="http://www.chuanmeiren.cn/" target="_blank">CHUANMEIREN</a>  &#169; 2006-09<br>
-      制作：姜伟<br>
-	  　</td>
-    
-  </tr>
-</tbody></table>
+
 <script language="JavaScript">
 <!--    //目的是为了做风格方便
     document.write('</div>');
